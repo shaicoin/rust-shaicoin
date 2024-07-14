@@ -165,7 +165,7 @@ impl Decodable for HeaderAndShortIds {
             header: Decodable::consensus_decode(r)?,
             nonce: Decodable::consensus_decode(r)?,
             short_ids: Decodable::consensus_decode(r)?,
-            prefilled_txs: Decodable::consensus_decode(r)?
+            prefilled_txs: Decodable::consensus_decode(r)?,
         };
         match header_short_ids.short_ids.len().checked_add(header_short_ids.prefilled_txs.len()) {
             Some(x) if x <= u16::MAX.into() => Ok(header_short_ids),

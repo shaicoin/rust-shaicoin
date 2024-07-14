@@ -372,9 +372,10 @@ impl From<ConversionError> for ParseError {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     #[cfg(feature = "serde")]
     use internals::serde_round_trip;
+
+    use super::*;
 
     #[test]
     fn time_from_str_hex_happy_path() {
